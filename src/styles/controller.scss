@@ -1,0 +1,30 @@
+@mixin point-width($w,$h){
+  width: $w;
+  height: $h;
+  line-height: $h;
+  border-radius: 50%;
+}
+
+.point{
+  display: inline-block;
+  @include point-width(40px,40px);
+
+  margin-right: 15px;
+  text-align: center;
+  color:#fff;
+  background-color: #666;
+  font-size: 30px;
+  transform: scale(.5);
+  transition: transform .6s ease-in-out,background-color .3s;
+
+  cursor: pointer;
+  &:hover { color: red; }
+  &.center {
+    background-color: #888;
+    transform: scale(1);
+    &.inverse {
+      transform: rotateY(180deg);
+    }
+  }
+
+}
